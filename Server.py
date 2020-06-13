@@ -1,6 +1,7 @@
 import ClientThread
 import socket
 import sys
+import Global_vars
 
 try:
     sockt = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
@@ -21,8 +22,11 @@ print("[LISTENING] server is listening")
 while True:
 
     client_soc, address = sockt.accept()
-    print("user connected")
+    print("[CONNECTING] Establishing Connection")
     new_con = ClientThread.Client(client_soc)
+    print(Global_vars.shared, Global_vars.shared)
     new_con.start()
+    new_con.join()
+    print(Global_vars.shared)
 
 sockt.close()
