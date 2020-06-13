@@ -1,3 +1,4 @@
+import ClientThread
 import socket
 import sys
 
@@ -7,7 +8,6 @@ try:
 except socket.error as err:
     print(f"failed to create socket , reason {err}")
     sys.exit()
-
 try:
     sockt.bind((socket.gethostbyname(str(socket.gethostname())), 5050))
 
@@ -20,8 +20,9 @@ print("[LISTENING] server is listening")
 
 while True:
 
-    c, addr = sockt.accept()
+    client_soc, address = sockt.accept()
     print("user connected")
-
+    new_con = ClientThread.Client(client_soc)
+    new_con.start()
 
 sockt.close()
