@@ -16,7 +16,7 @@ except socket.error as err:
     print(f"failed bind , reason {err}")
     sys.exit()
 
-sockt.listen(1)
+sockt.listen(5)
 print("[LISTENING] server is listening")
 
 while True:
@@ -25,14 +25,13 @@ while True:
     print("[CONNECTING] Established Connection")
     new_con = ClientThread.Client(client_soc)
     new_con.start()
-    new_con.join()
-    print(Global_vars.drivers_online)
-    print(Global_vars.routes_Available)
-    print(Global_vars.shared, Global_vars.shared)
+    #print(Global_vars.drivers_online)
+    #print(Global_vars.routes_Available)
+    #print(Global_vars.shared, Global_vars.shared)
 
 
+new_con.join()
 
-sockt.close()
 
 
 

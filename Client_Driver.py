@@ -14,14 +14,20 @@ client.recv(1)
 enroute = True
 distance = 0
 
-while distance < 10 and enroute:
+while distance <= 20 and enroute:
 
     client.send(bytes(str(distance), "utf-8"))
+    print("waiting for handshake")
     client.recv(1)
     sleep(1)
     distance = distance + 1
-
-
+    print(f"distance is {distance}")
+    if distance == 20:
+        client.send(bytes("1", "utf-8"))
+        print(f"sending a terminate cause distance is {distance}")
+    else:
+        client.send(bytes("0", "utf-8"))
+        print(f"sending a continue cause distance is {distance}")
 
 
 client.close()

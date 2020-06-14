@@ -1,6 +1,8 @@
 
 drivers_online = False
 
+arrived = False
+
 routes_Available = {
     "A":False,
     "B":False,
