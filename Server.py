@@ -22,11 +22,17 @@ print("[LISTENING] server is listening")
 while True:
 
     client_soc, address = sockt.accept()
-    print("[CONNECTING] Establishing Connection")
+    print("[CONNECTING] Established Connection")
     new_con = ClientThread.Client(client_soc)
-    print(Global_vars.shared, Global_vars.shared)
     new_con.start()
     new_con.join()
-    print(Global_vars.shared)
+    print(Global_vars.drivers_online)
+    print(Global_vars.routes_Available)
+    print(Global_vars.shared, Global_vars.shared)
+
+
 
 sockt.close()
+
+
+
