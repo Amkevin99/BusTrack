@@ -25,12 +25,9 @@ while True:
     print("[CONNECTING] Established Connection")
     new_con = ClientThread.Client(client_soc)
     new_con.start()
-    #print(Global_vars.drivers_online)
-    #print(Global_vars.routes_Available)
-    #print(Global_vars.shared, Global_vars.shared)
 
 
-new_con.join()
+
 
 
 

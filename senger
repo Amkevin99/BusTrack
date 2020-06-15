@@ -1,0 +1,43 @@
+[33mcommit 1358e2777e2e34200a0b3dc306511a98a01e2f4c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Kev <amkevin99@gmail.com>
+Date:   Sun Jun 14 20:25:40 2020 +0200
+
+    communcation model works up to arrival point only if passenger is already connected
+
+[33mcommit 0c77fb1019f316e5512e9ae50f9ba37713f73283[m
+Author: Kev <amkevin99@gmail.com>
+Date:   Sun Jun 14 17:39:59 2020 +0200
+
+    added new changes to communication model, partially working
+
+[33mcommit 2ff151469356e0bdd100b65566f479496096baff[m
+Author: Kev <amkevin99@gmail.com>
+Date:   Sat Jun 13 19:16:47 2020 +0200
+
+    added bus module
+
+[33mcommit a5253d4fa48dca2384ba0c3ec91d25bbfc7889bf[m
+Author: Kev <amkevin99@gmail.com>
+Date:   Sat Jun 13 13:08:43 2020 +0200
+
+    added bus module
+
+[33mcommit 2fe45e99550c96b5f3ab987bdec01da5fa17e7f2[m
+Merge: 293f222 29669f5
+Author: Kev <amkevin99@gmail.com>
+Date:   Sat Jun 13 13:06:54 2020 +0200
+
+    Merge branch 'master' of https://github.com/Amkevin99/BusTrack
+    initialised with base controller
+
+[33mcommit 29669f5f2d01dbd264a1cc23c286055d6ff0889e[m
+Author: Amkevin99 <51954020+Amkevin99@users.noreply.github.com>
+Date:   Sat Jun 13 12:57:13 2020 +0200
+
+    Initial commit
+
+[33mcommit 293f2222b8cbdf2781d1472129ef05020e46fc20[m
+Author: Kev <amkevin99@gmail.com>
+Date:   Sat Jun 13 12:53:08 2020 +0200
+
+    base client server model

@@ -3,7 +3,7 @@ import Global_vars
 from time import sleep
 
 
-route = "A"
+route = "RA"
 initial_massage = f'''{{ "type": 0,"route" : "{route}"}}'''
 client = socket.socket()
 client.connect((socket.gethostbyname(str(socket.gethostname())), 5050))
@@ -14,7 +14,7 @@ client.recv(1)
 enroute = True
 distance = 0
 
-while distance <= 20 and enroute:
+while distance <= 21 and enroute:
 
     client.send(bytes(str(distance), "utf-8"))
     print("waiting for handshake")
@@ -22,9 +22,10 @@ while distance <= 20 and enroute:
     sleep(1)
     distance = distance + 1
     print(f"distance is {distance}")
-    if distance == 20:
+    if distance == 21:
         client.send(bytes("1", "utf-8"))
-        print(f"sending a terminate cause distance is {distance}")
+        print(f"sending a terminate caus"
+              f"e distance is {distance}")
     else:
         client.send(bytes("0", "utf-8"))
         print(f"sending a continue cause distance is {distance}")

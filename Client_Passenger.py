@@ -3,14 +3,14 @@ import sys
 import time
 
 
-route = "A"
-initial_massage = f'''{{ "type": 1,"route" : "{route}"}}'''
+To = "F"
+Fro = "C"
+initial_message = f'''{{ "type": 1,"To" : "{To}","Fro":"{Fro}"}}'''
+
 client = socket.socket()
 client.connect((socket.gethostbyname(str(socket.gethostname())), 5050))
-client.send(bytes(initial_massage, "utf-8"))
+client.send(bytes(initial_message, "utf-8"))
 
-while True:
-    client.recv(1)
 
 
 
