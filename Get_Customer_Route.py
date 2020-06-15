@@ -20,8 +20,8 @@ def passenger_after_bus(routes, fro):
     selected_routes = []
     for route in routes:
         client_dist = calculate_path(Global_vars.routes[route], fro)
-    #Global_vars.route_progress[route]
-        if 0 < client_dist:
+
+        if Global_vars.route_progress[route] < client_dist:
             selected_routes.append(route)
     return selected_routes
 

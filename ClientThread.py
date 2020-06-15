@@ -38,11 +38,8 @@ class Client(Thread):
                     time.sleep(2)
                 else:
                     print("    [NOW ARRIVED]")
+                    Global_vars.arrived = False
                     break
-
-            # Close Connection and join Thread
-            self.con.close()
-
 
         elif client_type["type"] == 0:
             # DRIVER THREAD LOGIC
@@ -83,15 +80,17 @@ class Client(Thread):
                 else:
                     Global_vars.arrived = True
                     print(f"[[AT DESTINATION]] Driver Has now arrived at destination \n")
+                    Global_vars.drivers_online = False
+                    Global_vars.routes_Available[client_type["route"]] = False
+                    Global_vars.route_progress[client_type["route"]] = None
+
                     break
 
             # Close Connection and join Thread clearing  the current state of
             # locations and other relevant global variables
 
-            Global_vars.drivers_online = False
-            Global_vars.routes_Available[client_type["route"]] = False
+        self.con.close()
 
-            self.con.close()
 
 
 
